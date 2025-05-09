@@ -1,0 +1,308 @@
+/* styles.css */
+/* === FUENTES GENERALES === */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@400;700&display=swap');
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  background-color: #c4b7ab;
+  color: #764f4f;
+  margin: 0;
+  padding-top: 90px;
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #764f4f;
+  z-index: 999;
+  border-bottom: 2px solid #583b3b;
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-logo { color: white; font-weight: bold; font-size: 1.4rem; }
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.navbar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+}
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #c4b7ab;
+  transition: width 0.3s ease;
+}
+.navbar-menu li a:hover::after { width: 100%; }
+
+/* === HERO === */
+.hero {
+  background: #c4b7ab;
+  color: #764f4f;
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+.hero h1 { font-size: 2.5rem; }
+
+/* === ¿QUÉ HACEMOS? === */
+.qh {
+  background: #764f4f;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+.qh p { color: #fff; }
+
+/* === SECCIONES === */
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  scroll-margin-top: 100px;
+  text-align: center;
+}
+.intro-text, .subtitulo-servicios {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #764f4f;
+}
+
+/* === CARRUSEL DE SERVICIOS === */
+.carrusel-servicios {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 30px;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease;
+  opacity: 0.4;
+  transform: scale(0.9);
+  filter: blur(2px);
+  pointer-events: none;
+}
+.swiper-slide-active {
+  transform: scale(1.08);
+  z-index: 3;
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+.servicio-card {
+  background: #f1e7df;
+  border-radius: 14px;
+  padding: 25px;
+  width: 100%;
+  max-width: 270px;
+  min-height: 270px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: #764f4f;
+}
+.servicio-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.detalle {
+  display: none;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.swiper-slide-active .detalle {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.swiper-button-prev, .swiper-button-next {
+  background-color: #764f4f;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: #5f3e3e;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 1.4rem;
+}
+
+/* === REDES SOCIALES === */
+.red-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+.red-social img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.wapp-icon {
+  transform: scale(1.5);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.wapp-icon:hover { transform: scale(1.8); }
+.red-social img:not(.wapp-icon):hover { transform: scale(1.15); }
+
+/* === FORMULARIO DE CONTACTO === */
+.form-wrapper {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+#form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#form-contacto input,
+#form-contacto textarea {
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid #764f4f;
+  border-radius: 6px;
+  background-color: #f1e7df;
+  color: #333;
+  resize: none;
+}
+#form-contacto button {
+  background-color: #764f4f;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#form-contacto button:hover { background-color: #5f3e3e; }
+#mensaje-exito {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  display: none;
+  animation: fadeIn 0.6s ease-in-out;
+}
+.alerta {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* === MEDIA QUERIES PARA MÓVIL (≤768px) === */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+  .navbar-container {
+    padding: 10px 20px;
+  }
+  /* Flex-wrap: permite que los items se vayan a otra línea */
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .navbar-menu li a {
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  section {
+    padding: 30px 10px;
+  }
+  .intro-text, .subtitulo-servicios {
+    font-size: 1rem;
+  }
+  .carrusel-servicios {
+    padding: 0 10px;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    width: 36px;
+    height: 36px;
+  }
+  .servicio-card {
+    padding: 20px;
+    min-height: auto;
+  }
+  .red-social {
+    gap: 15px;
+  }
+  .red-social img {
+    width: 24px;
+    height: 24px;
+  }
+  .form-wrapper {
+    padding: 20px;
+  }
+  #form-contacto button {
+    padding: 10px;
+  }
+  footer {
+    padding: 15px;
+  }
+}

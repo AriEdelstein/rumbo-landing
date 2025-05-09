@@ -1,0 +1,149 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rumbo Comunicación</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="./index.html" class="logo">
+          <img src="assets/favicon.png" alt="Rumbo Comunicación" style="height: 40px;">
+        </a>
+      </div>      
+      <ul class="navbar-menu">
+        <li><a href="#que-hacemos">¿Qué hacemos?</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#redes">Redes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Rumbo Comunicación</h1>
+    <p>"Diseñando el camino de tu marca"</p>
+  </header>
+
+  <section id="que-hacemos" class="qh">
+    <h2>¿Qué hacemos?</h2>
+    <p class="intro-text"></p>
+    <p class="intro-text">
+      En Rumbo Comunicación diseñamos estrategias creativas para que tu marca se destaque 
+      en el entorno digital. 
+    </p>
+    <p class ="intro-text">
+      Creamos contenido visual, narrativo y funcional que conecta con tu audiencia, transmite tu 
+      identidad y potencia tu presencia en redes y medios. 
+      Somos una agencia que combina creatividad, planificación y estilo, adaptándonos a lo que 
+      cada proyecto necesita. 
+    </p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p class="subtitulo-servicios">
+      Te acompañamos con soluciones creativas y profesionales para potenciar tu marca.
+    </p>
+    <div class="swiper carrusel-servicios">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="servicio-card">
+            <h3>Gestión de redes sociales</h3>
+            <p class="detalle">
+              Creamos, planificamos y gestionamos el contenido de tus redes para construir comunidad, aumentar tu visibilidad y mantener una presencia constante, profesional y alineada a tu identidad.
+            </p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="servicio-card">
+            <h3>Fotografía Profesional</h3>
+            <p class="detalle">
+              Capturamos imágenes que transmiten lo que tu marca representa: desde fotos de producto hasta experiencias y fotografía de espacios. Cada toma está pensada para comunicar valor y generar impacto visual.
+            </p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="servicio-card">
+            <h3>Producción y edición de video</h3>
+            <p class="detalle">
+              Creamos videos dinámicos y atractivos para redes sociales, campañas o presentaciones. Desde la idea hasta el montaje final, nos encargamos de contar tu historia en movimiento.
+            </p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="servicio-card">
+            <h3>Diseño gráfico y branding</h3>
+            <p class="detalle">
+              Diseñamos piezas visuales con coherencia estética y funcionalidad. Ya sea para redes, identidad visual o materiales de comunicación, reflejamos tu esencia.
+            </p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="servicio-card">
+            <h3>Desarrollo de páginas web</h3>
+            <p class="detalle">
+              Diseñamos sitios web visuales, responsivos y fáciles de navegar, con foco en tu mensaje y la experiencia del usuario.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="swiper-button-prev flecha"></div>
+      <div class="swiper-button-next flecha"></div>
+    </div>
+  </section>
+  
+  
+  <section id="trabajos">
+    <h2>Trabajos</h2>
+    <p>Próximamente se separarán por rubros.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="form-wrapper">
+      <form id="form-contacto" method="POST">
+        <input id="nombre" type="text" name="name" placeholder="Tu nombre" required />
+        <input id="email" type="email" name="email" placeholder="Tu correo electrónico" required />
+        <textarea id="mensaje" name="message" placeholder="Tu mensaje..." rows="4" required></textarea>
+        <div id="mensaje-error" style="display:none;color:red;"></div>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="mensaje-exito" style="display:none;">¡Mensaje enviado con éxito!</div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <h2>Redes sociales</h2>
+    <div class="red-social">
+      <a href="https://www.instagram.com/rumbo.comunicacion/" target="_blank">
+        <img src="assets/logoig.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/5491128533814" target="_blank">
+        <img src="assets/logowapp.png" alt="WhatsApp" class="wapp-icon">
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Rumbo Comunicación</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
