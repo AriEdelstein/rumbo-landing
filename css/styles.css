@@ -72,17 +72,24 @@ body {
   margin: 0;
 }
 
-/* === ¿QUÉ HACEMOS? === */
+/* === ¿QUÉ HACEMOS? (Mejorado) === */
 .qh {
   background: #764f4f;
   color: #fff;
   padding: 100px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .qh p {
   color: #fff;
-  margin: 0 0 15px;
+  margin: 0 auto;
+  max-width: 800px;
 }
+
 
 /* === SECCIONES GENERALES === */
 section {
