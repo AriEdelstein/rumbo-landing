@@ -5,10 +5,8 @@ window.trabajosData = [
     title: 'Blumtech',
     images: [
       'IMG-20250509-WA0006.jpg',
-      'IMG-20250509-WA0007.jpg',
       'IMG-20250509-WA0008.jpg',
       'IMG-20250509-WA0009.jpg',
-      'IMG-20250509-WA0010.jpg',
       'IMG-20250509-WA0012.jpg',
       'IMG-20250509-WA0014.jpg'
     ]

@@ -260,46 +260,99 @@ section h2 {
 }
 
 /* === MODAL === */
-/* — Ocultar modal hasta que se haga clic en “Ver más” — */
 #modal-trabajos {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
+
 #modal-trabajos .modal-contenido {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: 8px;
   width: 90%;
   max-width: 700px;
-  padding: 20px;
   max-height: 80vh;
+  padding: 20px;
   overflow: hidden;
-  position: relative;
 }
+
+/* Botón cerrar */
 #modal-trabajos .modal-cerrar {
   position: absolute;
-  top: 12px; right: 16px;
+  top: 12px;
+  right: 16px;
   font-size: 1.6rem;
   cursor: pointer;
 }
+
+/* Contenedor del swiper dentro del modal */
 #modal-trabajos .modal-swiper {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
-  padding-bottom: 20px;
+  overflow: visible;
 }
+
+/* Cada slide centrado */
+#modal-trabajos .modal-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen adaptada sin deformarse */
 #modal-trabajos .modal-swiper .swiper-slide img {
-  max-width: 80%;
-  max-height: 50vh;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
   margin: 0 auto;
 }
+
+#modal-trabajos .modal-prev,
+#modal-trabajos .modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #fdfdfd;
+  border: 1px solid #764f4f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+#modal-trabajos .modal-prev { left: 8px; }
+#modal-trabajos .modal-next { right: 8px; }
+#modal-trabajos .modal-prev::after,
+#modal-trabajos .modal-next::after {
+  color: #764f4f;
+  font-size: 1.2rem;
+}
+#modal-trabajos .modal-prev:hover,
+#modal-trabajos .modal-next:hover {
+  background: #764f4f;
+}
+#modal-trabajos .modal-prev:hover::after,
+#modal-trabajos .modal-next:hover::after {
+  color: #fff;
+}
+
 
 /* === REDES SOCIALES === */
 .red-social {
@@ -456,6 +509,47 @@ footer {
   footer {
     padding: 15px;
   }
+
+  /* — Contenedor del modal reducido para móvil — */
+  #modal-trabajos .modal-contenido {
+    width: 90vw;            /* 90% del ancho de la pantalla */
+    max-width: 90vw;
+    max-height: 60vh;       /* sólo 60% de la altura de pantalla */
+    padding: 10px;          /* menos padding para ajustar */
+    overflow: hidden;       /* ocultar cualquier desborde */
+  }
+
+  /* — Área del swiper ocupa el resto del modal — */
+  #modal-trabajos .modal-swiper {
+    height: calc(60vh - 40px); /* resta aprox. 40px para la X y margenes */
+    overflow: hidden;          /* recorta barras laterales */
+  }
+
+  /* — Cada slide llena el 100% del swiper y la imagen cabe justa — */
+  #modal-trabajos .modal-swiper .swiper-slide {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #modal-trabajos .modal-swiper .swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  /* — Flechas y “X” más pequeñas y bien posicionadas — */
+  #modal-trabajos .modal-prev,
+  #modal-trabajos .modal-next {
+    width: 28px;
+    height: 28px;
+  }
+  #modal-trabajos .modal-cerrar {
+    top: 8px;
+    right: 8px;
+    font-size: 1.4rem;
+  }
 }
 
 @keyframes fadeIn {
@@ -467,4 +561,9 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.carrusel-trabajos .swiper-button-disabled {
+  opacity: 0 !important;
+  pointer-events: none;
 }
